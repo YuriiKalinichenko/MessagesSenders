@@ -1,10 +1,8 @@
-﻿using System.Threading.Tasks;
-using Ardalis.Result;
-
-namespace MessagesSenders
+﻿namespace MessagesSenders
 {
     public interface IMessageSender
     {
-        public Task<IResult> Send();
+        IMessageSenderService GetService(MessageServices service);
     }
+
 }

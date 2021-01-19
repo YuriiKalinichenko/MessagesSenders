@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
+using Ardalis.Result;
 using MessagesSenders.SendersImplementations;
+using MessagesSenders.SMS.SendersImplementations;
 using Microsoft.Extensions.Configuration;
 
 namespace MessagesSenders
@@ -29,7 +32,7 @@ namespace MessagesSenders
             switch(type)
             {
                 case SenderTypes.SMS:
-                    return new SMSMessageSender();
+                    return new SMSMessageSender(_config);
                 default:
                     throw new NotSupportedException();
             }
